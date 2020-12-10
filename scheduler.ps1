@@ -2,4 +2,4 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument 'Start-Pro
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 11am
 
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "a"
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "b"
