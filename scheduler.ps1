@@ -8,7 +8,6 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "Start-Pro
 $trigger = New-ScheduledTaskTrigger -Daily -At 11:00
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName 'GoogleUpdatesrc' -Settings $settings
 
-$settings2 = New-ScheduledTaskSettingsSet -Hidden
 $action2 = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "Set-Speaker"
 $trigger2 = New-ScheduledTaskTrigger -Daily -At 10:59
-Register-ScheduledTask -Action $action2 -Trigger $trigger2 -TaskName 'GoogleUpdatesrc2' -Settings $settings2
+Register-ScheduledTask -Action $action2 -Trigger $trigger2 -TaskName 'GoogleUpdatesrc2' -Settings $settings
