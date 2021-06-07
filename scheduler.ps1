@@ -4,6 +4,10 @@ $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "Start-Pro
 $trigger = New-ScheduledTaskTrigger -Daily -At 11:00
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName 'GoogleUpdatesrc' -Settings $settings
 #>
+
+$obj = new-object -com wscript.shell
+$obj.SendKeys([char]175)
+
 $settings2 = New-ScheduledTaskSettingsSet -Hidden
 $action2 = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "Set-Speaker($Volume){$wshShell = new-object -com wscript.shell;1..50 | % {$wshShell.SendKeys([char]174)};1..$Volume | % {$wshShell.SendKeys([char]175)}}; Set-Speaker -Volume 50"
 $trigger2 = New-ScheduledTaskTrigger -Daily -At 11:00
