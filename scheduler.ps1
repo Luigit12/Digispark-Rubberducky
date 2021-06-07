@@ -1,7 +1,7 @@
 
 Function Set-Speaker($Volume){$wshShell = new-object -com wscript.shell;1..50 | % {$wshShell.SendKeys([char]174)};1..$Volume | % {$wshShell.SendKeys([char]175)}}
 
-Set-Alias setspeaker Set-Speaker
+Set-Alias -Name setspeaker -Value Set-Speaker
 
 $settings = New-ScheduledTaskSettingsSet -Hidden
 $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument "Start-Process https://Luigit12.github.io"
